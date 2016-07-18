@@ -1,0 +1,98 @@
+﻿// 0. 脚本说明头规范示例(必须添加。每个参与码当前脚本者请注意对应编号添加当日修改日期),如下：
+
+/**********************************************************************************
+ * @ProjectName: 项目名称(BubbleSoul)
+ * @ScriptCreater: 当前脚本创建者名字 
+ * @CreateTime: 当前脚本创建时间 2016-07-18
+ * @ScriptDescription: 当前创建脚本简要描述
+ * 
+ * @ScriptCoder: 有参与当前脚本码代码者 都往后添加名字  示例： 1. Jerry 2. Marry 3. Wade
+ * @CodeTime:对应名字添加每一次修改时间 示例： 1. 2016-07-07 2016-07-15 2. 2016-07-07 2016-07-09 
+ *           2016-07-25 3. 2016-07-27 2016-08-29
+ **********************************************************************************/
+
+using UnityEngine;
+using System.Collections;
+
+// 1. 类注释示例 (必须添加。使用VS中C#代码编写的"///"式),如下：
+
+/// <summary>
+/// 编码规范说明类
+/// </summary>
+public class CodeStandard : MonoBehaviour
+{
+
+    // 2. 成员字段注释示例(必要时添加),如下：
+
+    public bool _fieldExplain; // 字段说明
+
+    // 3. 方法说明注释示例(必要时添加，可尽量添加),如下：
+
+    /// <summary>
+    /// 方法注释说明
+    /// </summary>
+    /// <param name="args">参数说明</param>
+    /// <returns>返回值说明</returns>
+    public bool MethodExplain(int args)
+    {
+        // 4. 涉及复杂算法 复杂逻辑,可在封装的方法前给出逻辑思想 注释示例(必要时添加) 如下:
+
+        /* 示例：Ai智能一步实现
+         * 1.得到所有可能走法
+         * 2.计算所有可能走法得分，保存最高分对应走法
+         * 3.生成走法对应步骤
+         */
+
+        // 5. 其它注释 按个人习惯 给代码段 需要注释地方 添加相应注释 (PS: 不用刻意的追求注释，添加必要的注释，以实现功能为先) 如下:
+
+        // Cc.个人代码段 注释习惯示例 (PS: 这里可以按照个人规范习惯注释)
+
+        /*
+         
+        int clickId = this.GetChessMan(xTo, yTo); // 若目标位置有棋子 获取该棋子Id
+        // 目标位置有己方棋子
+        //Debug.Log(_selectedId + "---" + clickId);
+        if (clickId != -1 && this.IsSameColor(_selectedId, clickId)) // 先判断,目标是不是已方棋子,若是,更换选择
+        {
+            return;
+        }
+
+        if (!this.CanMove(_selectedId, xTo, yTo, clickId))
+        {
+            return;
+        }
+
+        // 记录走棋信息
+        Step tempStep = new Step(_selectedId, clickId, _chessMans[_selectedId].X, _chessMans[_selectedId].Y, xTo, yTo);
+        //Debug.Log(tempStep.MoveId);
+        _steps.Add(tempStep); // 用于悔棋 每次悔两步
+
+        // 走棋
+        _chessMans[_selectedId].X = xTo;
+        _chessMans[_selectedId].Y = yTo;
+        iTween.MoveTo(_selectedChessManAction.gameObject, this.GetPositionByXY(xTo, yTo), 0.3f);
+
+        this.DestroyNextTips(_chessManActions[_selectedId]); // 销毁当前选中棋子的 辅助圆点
+
+        _selectedId = -1; // 重置选中棋子
+        _selectedChessManAction._goSelect.SetActive(false);
+
+        // 若走棋目标有对方棋子,那么对方棋子应该死掉
+        if (clickId != -1)
+        {
+            _chessMans[clickId].IsDead = true;
+            //Destroy(_clickChessManAction.gameObject, 0.2f);
+            _clickChessManAction.gameObject.SetActive(false);
+
+            // 检查游戏是否结束
+            this.CheckGameOver(clickId);
+        }
+
+        // 换手
+        _isBlackTurn = !_isBlackTurn;
+         
+         */
+
+        return true;
+    }
+}

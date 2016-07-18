@@ -41,3 +41,16 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+##########################################
+## BubbleSoul_Project_Repository_GitIgnore
+##########################################
+
+Library/
+Temp/
+*.suo
+*.csproj
+*.sln
+*.userprefs
+*.unityproj
+*.DS_Store
